@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
-public class McForbidPlugin extends JavaPlugin {
+public class CorePlugin extends JavaPlugin {
 
 	
 	public void onEnable() {
