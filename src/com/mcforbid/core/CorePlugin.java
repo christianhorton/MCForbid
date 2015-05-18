@@ -5,10 +5,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class CorePlugin extends JavaPlugin {
-
+	
+	public APIEngine apiEngine = new APIEngine();
 	
 	public void onEnable() {
-		if(!checkApiConnection()) {
+		apiEngine = new APIEngine();
+		if(!apiEngine.checkApiConnection()) {
 			getLogger().log(Level.INFO, "API Database is down. Disabling Plugin.");
 			getPluginLoader().disablePlugin(this);
 		}
@@ -18,10 +20,5 @@ public class CorePlugin extends JavaPlugin {
 	
 	public void onDisable() {
 		getLogger().log(Level.INFO, "Disabled");
-	}
-	
-	private boolean checkApiConnection() {
-		
-		return false;
 	}
 }
